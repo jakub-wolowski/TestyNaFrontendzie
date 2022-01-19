@@ -8,7 +8,7 @@ export const getTheBestPromotionForDate = (
     (prom: Promotion) => prom.dateStart < date && prom.dateEnd > date
   );
 
-  if (!currentPromotions) {
+  if (currentPromotions.length === 0) {
     return null;
   }
 
