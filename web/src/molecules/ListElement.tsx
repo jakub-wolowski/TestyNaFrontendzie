@@ -33,7 +33,7 @@ const ListElement = ({
   return (
     <Row>
       <Name>{product.name}</Name>
-      <Cell>{displayPrice(product.price)}</Cell>
+      <Cell data-testid='unitPrice'>{displayPrice(product.price)}</Cell>
       <Cell>
         <Button disabled={product.quantity < 1} onClick={onRemove}>
           -1
@@ -41,7 +41,7 @@ const ListElement = ({
         <span>{product.quantity}</span>
         <Button onClick={onAdd}>+1</Button>
       </Cell>
-      <Cell>{displayPrice(product.price * product.quantity)}</Cell>
+      <Cell data-testid='totalPrice'>{displayPrice(product.price * product.quantity)}</Cell>
     </Row>
   );
 };
